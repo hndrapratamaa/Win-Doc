@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 7. Startup & Maintenance</title>
+    
+    <meta name="description" content="Panduan mengelola aplikasi startup dan maintenance rutin untuk menjaga Windows 11 tetap ringan setelah optimasi.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="office.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="intro.html" class="nav-icon-btn" title="Selesai (Ke Awal)"><i class="fa-solid fa-rotate-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="startup" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">7. Startup & Maintenance</h2>
+                        <p class="page-desc">Mengelola aplikasi berjalan dan perawatan rutin pasca optimasi.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Matikan Startup Apps (Efisiensi Harian)</h3>
+                        <p class="doc-p">Aplikasi yang berjalan otomatis saat Windows menyala adalah penyebab utama konsumsi RAM yang tinggi. Manajemen *startup* adalah perawatan yang wajib dilakukan secara rutin.</p>
+                        <ul class="doc-ul">
+                            <li>Buka **Task Manager** (Ctrl + Shift + Esc).</li>
+                            <li>Pindah ke tab **"Startup apps"**.</li>
+                            <li>**Disable** semua aplikasi yang tidak esensial. Biarkan hanya yang krusial (seperti Driver Audio/VGA) tetap aktif.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Install Office Ringan (Reminder)</h3>
+                        <p class="doc-p">Jika Microsoft Office 2021/365 terasa berat, sangat disarankan untuk menginstal Office versi minimalis (hanya Word, Excel, PPT) menggunakan metode ODT.</p>
+                        <div class="doc-p" style="margin-top: 1rem;">
+                            <!-- MENGGUNAKAN CLASS ACCENT-BG UNTUK KONSISTENSI -->
+                            <a href="office.html" class="credit-btn accent-bg" style="width: 100%; justify-content: center;">
+                                <i class="fa-solid fa-arrow-right"></i> Lanjutkan ke Bab 6: Instalasi Office (ODT)
+                            </a>
+                        </div>
+                        <!-- MENGGUNAKAN CLASS TEXT-INFO-TIP UNTUK KONSISTENSI -->
+                        <div class="doc-p text-info-tip" style="font-size: 0.9rem; margin-top: 1rem;">
+                            💡 Tips: Untuk kustomisasi instalasi Office yang sangat detail, gunakan aplikasi pihak ketiga seperti **Office Tool Plus**.
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            const codeBox = btn.previousElementSibling;
+            const code = codeBox.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

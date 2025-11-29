@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 4. Instalasi Atlas OS</title>
+    
+    <meta name="description" content="Panduan instalasi Atlas OS di atas Windows 11 untuk optimasi sistem, menghilangkan bloatware, dan meningkatkan performa pada PC low-end.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+        
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="mas.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="manual.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="atlas" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">4. Instalasi Atlas OS</h2>
+                        <p class="page-desc">Mengubah instalasi Windows bersih menjadi sistem operasi super ringan, responsif, dan minim *latency*.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">🔧 Mekanisme & Prasyarat Penting</h3>
+                        <p class="doc-p">AtlasOS adalah **Playbook** yang dijalankan melalui AME Wizard. Fungsinya menghapus *bloatware*, mematikan *telemetri*, dan menonaktifkan layanan tidak penting untuk memaksimalkan performa. Atlas **mensyaratkan instalasi Windows yang bersih dan lengkap** (dari Bab 2) untuk menjamin stabilitas.</p>
+                        
+                        <!-- PENGHAPUSAN INLINE STYLE -->
+                        <div class="doc-p text-warning" style="margin-top: 1rem;">⚠️ Peringatan:</div>
+                        <ul class="doc-ul">
+                            <li>AtlasOS **mewajibkan instalasi Windows bersih** (lihat Bab 2).</li>
+                            <li>**Tidak dapat di-uninstall** tanpa melakukan *reinstall* Windows.</li>
+                            <li>Edisi **Windows 11 Pro** sangat direkomendasikan (Home tidak didukung resmi).</li>
+                        </ul>
+                        
+                        <p style="font-weight: 600; margin-top: 1.5rem;">📦 Unduhan Resmi:</p>
+                        <ul class="doc-ul">
+                            <li>**AME Wizard Beta**</li>
+                            <li>**Atlas Playbook (.apbx)**</li>
+                        </ul>
+                        <!-- PENGGANTIAN INLINE STYLE DENGAN CLASS ACCENT-BG -->
+                        <a href="https://atlasos.net/" target="_blank" class="credit-btn accent-bg" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                            <i class="fa-solid fa-download"></i> Unduh di Situs Resmi AtlasOS
+                        </a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">📝 Bagian A: Persiapan & Update (WAJIB)</h3>
+                        <p class="doc-p">Sebelum menjalankan Playbook, Windows harus berada dalam kondisi *fully updated* agar proses optimasi stabil.</p>
+                        <ol class="doc-ul" style="list-style-type: decimal; margin-left: 1.5rem;">
+                            <li>Download dan ekstrak AME Wizard & Atlas Playbook.</li>
+                            <li>**Pastikan driver jaringan telah terinstal** (lihat Bab 2).</li>
+                            <li>Buka **Settings → Windows Update**. Install semua *update* (termasuk *optional updates*).</li>
+                            <li>Buka **Microsoft Store → Library** dan *Update All*.</li>
+                            <li>**Restart** perangkat setelah semua *update* selesai. Ulangi pengecekan *update* sekali lagi untuk memastikan sistem benar-benar siap.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">🚀 Bagian B: Penerapan Playbook</h3>
+                        <ol class="doc-ul" style="list-style-type: decimal; margin-left: 1.5rem;" start="6">
+                            <li>Jalankan **AME Wizard Beta.exe** sebagai Administrator.</li>
+                            <li>*Drag & drop* file **Atlas Playbook.apbx** ke jendela AME Wizard.</li>
+                            <li>Ikuti seluruh instruksi pada layar, berikan persetujuan untuk perubahan permanen seperti Penonaktifan Windows Defender, Telemetri, dan penghapusan aplikasi bawaan.</li>
+                            <li>Sistem akan melakukan beberapa proses otomatis dan *restart* beberapa kali.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">📉 Daftar Perubahan Sistem oleh AtlasOS</h3>
+                        <p class="doc-p">Atlas akan menghapus/menonaktifkan komponen untuk performa ekstrem. Harap ketahui daftar perubahan ini:</p>
+                        
+                        <p style="font-weight: 600; margin-top: 1rem;">Komponen yang Dihapus / Dinonaktifkan Permanen</p>
+                        <ul class="doc-ul">
+                            <li>**Smart App Control** (Dihapus karena dapat menyebabkan *slowdown*).</li>
+                            <li>**Aplikasi Store bawaan** (Teams, Xbox, Clipchamp, dll.).</li>
+                            <li>**Semua jenis Telemetry** dan fitur *Windows tips*.</li>
+                            <li>**Automatic Windows Update** dan **Windows Defender** (dinonaktifkan untuk menghemat RAM).</li>
+                        </ul>
+
+                        <!-- PENGHAPUSAN INLINE STYLE -->
+                        <p class="doc-p text-info-tip" style="margin-top: 1.5rem;">💡 Pasca Instalasi & Hasil Akhir:</p>
+                        <ul class="doc-ul">
+                            <li>**Hapus Windows.old:** Bersihkan sisa file instalasi lama melalui Settings → Storage.</li>
+                            <li>**Instal Driver Manual:** Wajib menginstal driver GPU dan Chipset secara manual dari situs produsen.</li>
+                            <li>**Hasil Akhir:** RAM *idle* akan berada di sekitar **1.0 – 1.3GB**, menjadikan PC sangat responsif untuk perangkat low-end.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            const codeBox = btn.previousElementSibling;
+            const code = codeBox.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+        }
+    </script>
+</body>
+</html>

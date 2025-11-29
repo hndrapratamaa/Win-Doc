@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 3. Aktivasi (MAS)</title>
+    <meta name="description" content="Panduan aktivasi Windows 11 & Office (MAS) lengkap, aman, dan updated per Nov 2025. Metode HWID, OHook, KMS, dan PowerShell.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+        
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="install.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="atlas.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="mas" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">3. Aktivasi (MAS) <span class="badge">Updated Nov 2025</span></h2>
+                        <p class="page-desc">Metode Aktivasi Permanen (HWID/OHook) dan KMS untuk Windows & Office.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    
+                    <!-- START: LEGAL & SAFETY DISCLAIMER (PENTING) -->
+                    <div class="card highlight-yellow">
+                        <h3 class="doc-heading">⚠️ Legal & Safety Disclaimer</h3>
+                        <p class="doc-p text-warning">Panduan aktivasi ini hanya menjelaskan konsep dan mekanisme dari metode komunitas. **Selalu** gunakan lisensi resmi Microsoft (retail, OEM, atau Volume Licensing) yang sah.</p>
+                        <p class="doc-p text-warning">Penulis/Dokumen ini **tidak menganjurkan pembajakan** dan **tidak bertanggung jawab** atas segala konsekuensi hukum atau teknis dari penggunaan alat pihak ketiga.</p>
+                        <p class="doc-p" style="font-size: 0.9rem; margin-top: 1rem;">Opsi Legal: Kunjungi [Situs Microsoft Volume Licensing] atau beli lisensi dari reseller resmi.</p>
+                    </div>
+                    <!-- END: LEGAL & SAFETY DISCLAIMER -->
+                    
+                    <div class="card highlight-green">
+                        <h3 class="doc-heading">Metode 1: PowerShell (Recommended) ❤️</h3>
+                        <p class="doc-p">1. Klik kanan tombol Start (Win + X), pilih <strong>Terminal (Admin)</strong> atau <strong>PowerShell (Admin)</strong>.</p>
+                        <p class="doc-p">2. Salin dan tempel perintah di bawah ini, lalu tekan Enter:</p>
+                        <div class="code-box-wrapper">
+                            <pre class="code-box"><code>irm https://get.activated.win | iex</code></pre>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p class="doc-p" style="font-size: 0.9rem; opacity: 0.8;">Metode ini berfungsi untuk Windows 8/10/11. Menu aktivasi akan muncul, pilih opsi 1 (HWID) untuk aktivasi permanen.</p>
+                        
+                        <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 1.5rem 0;">
+
+                        <p class="doc-p" style="font-weight: 600;">Jika perintah di atas Error / Diblokir ISP (Menggunakan DNS-Over-HTTPS):</p>
+                        <p class="doc-p">Gunakan perintah alternatif ini (membutuhkan Windows 10/11 versi terbaru):</p>
+                        <div class="code-box-wrapper">
+                            <pre class="code-box"><code>iex (curl.exe -s --doh-url https://1.1.1.1/dns-query https://get.activated.win | Out-String)</code></pre>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-blue">
+                        <h3 class="doc-heading">Metode 2: Traditional (Manual)</h3>
+                        <p class="doc-p">Jika Terminal/PowerShell diblokir atau terjadi error yang tidak teratasi, gunakan metode manual:</p>
+                        <ul class="doc-ul">
+                            <li>Kunjungi repository resmi MAS dan unduh file <strong>MAS_AIO.cmd</strong>.</li>
+                            <li>Klik kanan file tersebut, lalu pilih <strong>Run as Administrator</strong>.</li>
+                            <li>Ikuti petunjuk di layar (Pilih opsi 1 untuk HWID).</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Jenis Aktivasi yang Tersedia</h3>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; color: var(--text-color);">
+                                <thead>
+                                    <tr style="text-align: left; border-bottom: 2px solid rgba(0,0,0,0.1);">
+                                        <th style="padding: 10px;">Tipe</th>
+                                        <th style="padding: 10px;">Produk</th>
+                                        <th style="padding: 10px;">Durasi</th>
+                                        <th style="padding: 10px;">Koneksi?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: 10px; font-weight: bold;">HWID</td>
+                                        <td style="padding: 10px;">Windows 10/11</td>
+                                        <td style="padding: 10px;"><span style="background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">Permanen</span></td>
+                                        <td style="padding: 10px;">Ya (Hanya di awal)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: 10px; font-weight: bold;">Ohook</td>
+                                        <td style="padding: 10px;">Office (2019/2021/365)</td>
+                                        <td style="padding: 10px;"><span style="background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">Permanen</span></td>
+                                        <td style="padding: 10px;">Tidak</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; font-weight: bold;">Online KMS</td>
+                                        <td style="padding: 10px;">Win / Office</td>
+                                        <td style="padding: 10px;"><span style="background: #fef9c3; color: #854d0e; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">180 Hari</span></td>
+                                        <td style="padding: 10px;">Ya (Setiap 180 Hari)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-yellow">
+                        <h3 class="doc-heading">Upgrade Edisi Windows (Penting untuk Optimasi)</h3>
+                        <p class="doc-p">Jika Anda menginstal Windows Home / Single Language, sangat disarankan untuk meng-upgrade ke edisi **Pro** atau **Enterprise**. Gunakan fitur <strong>"Extras"</strong> atau <strong>"Change Windows Edition"</strong> di dalam menu MAS untuk melakukan *upgrade*.</p>
+                        <p class="doc-p" style="font-size: 0.9rem;">Upgrade ini krusial karena edisi Pro/Enterprise memungkinkan Anda mengakses **Group Policy Editor (gpedit.msc)**, yang merupakan alat utama untuk menonaktifkan Telemetry dan layanan latar belakang yang berat.</p>
+                    </div>
+
+                    <!-- MINI FAQ SECTION -->
+                    <div class="card faq-container">
+                        <h3 class="doc-heading">Mini FAQ Aktivasi</h3>
+                        <div class="faq-item">
+                            <p class="faq-question">Q: Apa bedanya HWID dan Online KMS?</p>
+                            <p class="faq-answer">A: **HWID** (*Hardware ID*) memberikan aktivasi permanen yang tersimpan di server Microsoft. Selama Anda tidak mengganti motherboard, aktivasi akan otomatis berlaku bahkan setelah instalasi ulang. **Online KMS** hanya memberikan lisensi selama 180 hari, dan sistem perlu melakukan re-aktivasi (perpanjangan) setelah periode tersebut berakhir.</p>
+                        </div>
+                        <div class="faq-item">
+                            <p class="faq-question">Q: Jika HWID gagal, apa langkah selanjutnya?</p>
+                            <p class="faq-answer">A: HWID biasanya hanya berlaku jika sistem Anda pernah teraktivasi secara permanen sebelumnya. Jika gagal, coba gunakan opsi <strong>Digital License</strong> (jika ada) atau gunakan metode <strong>Online KMS</strong> sebagai alternatif untuk sementara.</p>
+                        </div>
+                        <div class="faq-item">
+                            <p class="faq-question">Q: Perlu uninstall Office lama sebelum aktivasi OHook?</p>
+                            <p class="faq-answer">A: Tidak wajib, tetapi sangat disarankan untuk melakukan *Clean Install* Office menggunakan metode ODT (Bab 6) untuk memastikan tidak ada konflik lisensi atau sisa file lama yang menyebabkan kegagalan OHook.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- Live Region for Accessibility -->
+    <div id="aria-copy-live" aria-live="polite" style="position:absolute;left:-9999px;"></div>
+
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            try {
+                // Menggunakan closest dan querySelector untuk robustness
+                const wrapper = btn.closest('.code-box-wrapper');
+                const codeBox = wrapper.querySelector('.code-box');
+                // Mengambil konten, membersihkan entitas HTML (&lt;, &gt;, &amp;) untuk salin murni
+                const code = codeBox.textContent.trim();
+                
+                navigator.clipboard.writeText(code).then(() => {
+                    // Feedback Visual
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                    setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+
+                    // Feedback Accessibility (aria-live)
+                    const live = document.getElementById('aria-copy-live');
+                    if (live) live.textContent = 'Teks disalin ke clipboard';
+
+                }).catch(err => {
+                    console.error('Gagal menyalin:', err);
+                    alert('Gagal menyalin. Silakan salin manual.');
+                });
+            } catch (err) {
+                console.error('Copy failed', err);
+                alert('Gagal menyalin. Silakan salin manual.');
+            }
+        }
+    </script>
+</body>
+</html>

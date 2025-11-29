@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 5. Manual Tweaking</title>
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Panduan optimasi Windows 11 secara manual, termasuk mematikan service berat, debloating dengan script Chris Titus, dan penyesuaian visual effects.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+
+        <!-- START: KONTROL NAVIGASI BARU DI DALAM PROFILE HEADER -->
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="atlas.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="office.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+        <!-- END: KONTROL NAVIGASI BARU -->
+    </div>
+
+    <main>
+        <div class="main-content">
+            <!-- START SECTION CONTENT -->
+            <section id="manual" class="tab-content">
+                <div class="section-header">
+                    <!-- HANYA JUDUL DAN DESKRIPSI -->
+                    <div class="header-content">
+                        <h2 class="page-title">5. Manual Tweaking</h2>
+                        <p class="page-desc">Optimasi manual jika Anda memilih tidak menggunakan Atlas OS.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Debloating Cepat dengan Script</h3>
+                        <p class="doc-p">Jika merasa Atlas OS terlalu ekstrem, Anda bisa menggunakan Chris Titus Tech Tool. Alat ini berbasis PowerShell dan menyediakan menu interaktif untuk melakukan *debloating* yang lebih moderat:</p>
+                        
+                        <ol class="doc-ul" style="list-style-type: decimal; margin-left: 1.5rem;">
+                            <li>Buka **PowerShell sebagai Administrator**.</li>
+                            <li>Salin dan jalankan perintah ini:</li>
+                        </ol>
+
+                        <div class="code-box-wrapper">
+                            <div class="code-box">iwr -useb https://christitus.com/win | iex</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                        <ul class="doc-ul">
+                            <li>Di tab "Tweaks", pilih profil **"Desktop"** (untuk penggunaan standar) atau **"Laptop"**.</li>
+                            <li>Klik **"Run Tweaks"**. Proses ini akan mematikan Telemetry, menghapus Temporary files, dan menerapkan optimasi ringan lainnya.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Matikan Service Berat (Services.msc)</h3>
+                        <p class="doc-p">Menonaktifkan layanan Windows yang tidak perlu adalah kunci untuk mengurangi penggunaan RAM dan CPU di latar belakang. Tekan **Win + R**, ketik **"services.msc"**, lalu cari dan ubah **"Startup type"** menjadi **"Disabled"** untuk layanan berikut:</p>
+                        <ul class="doc-ul">
+                            <li>**Connected User Experiences and Telemetry:** Wajib dimatikan. Bertanggung jawab atas pengiriman data ke Microsoft.</li>
+                            <li>**SysMain (Dulu Superfetch):** Matikan jika PC/Laptop Anda menggunakan **SSD**. Jika Anda masih menggunakan HDD jadul, biarkan saja (membantu *boot time*).</li>
+                            <li>**Windows Search:** Matikan jika Anda sering mengalami *disk usage* 100% atau jika Anda jarang menggunakan fitur pencarian Windows.</li>
+                            <li>**Downloaded Maps Manager:** Jika Anda tidak pernah menggunakan aplikasi Maps bawaan Windows, layanan ini tidak diperlukan.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Optimasi Visual Effects</h3>
+                        <p class="doc-p">Windows menggunakan sumber daya GPU/CPU untuk animasi dan efek visual. Menonaktifkannya dapat memberikan peningkatan performa yang signifikan. Caranya:</p>
+                        <ul class="doc-ul">
+                            <li>Ketik **"View advanced system settings"** di *Start Menu*.</li>
+                            <li>Pilih tab **Advanced** lalu klik tombol **Settings** di bawah *Performance*.</li>
+                            <li>Pilih **"Adjust for best performance"** (ini akan membuat tampilan Windows menjadi "burik").</li>
+                            <li>Untuk tampilan yang lebih baik, centang kembali:
+                                <ul class="doc-ul" style="list-style-type: circle; margin-top: 0.5rem; margin-left: 1rem;">
+                                    <li>"Show thumbnails instead of icons"</li>
+                                    <li>"Smooth edges of screen fonts"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- END SECTION CONTENT -->
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- HANYA FUNGSI openSubTab dan copyCode yang dipertahankan -->
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            const codeBox = btn.previousElementSibling;
+            const code = codeBox.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+        }
+    </script>
+</body>
+</html>

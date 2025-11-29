@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 2. Instalasi Windows</title>
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Panduan instalasi Windows 11 Clean Install, tips bypass persyaratan TPM/RAM, dan panduan membuat bootable USB Rufus.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+        
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="intro.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="mas.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="install" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">2. Instalasi Windows</h2>
+                        <p class="page-desc">Panduan ini mencakup proses pemilihan ISO, pembuatan *bootable* USB, dan langkah *Clean Install* Windows 11 untuk performa maksimal.</p>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Pemilihan File ISO Windows 11</h3>
+                        <p class="doc-p">Pilih edisi Windows 11 terbaru dari link resmi Microsoft. Untuk perangkat RAM 4GB, edisi **IoT Enterprise** atau **Pro** adalah yang paling direkomendasikan karena fleksibilitas optimasi.</p>
+
+                        <div class="sub-tabs-scroll">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'dl-consumer')">Consumer 25H2 (Standar)</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'dl-consumer-upd')">Consumer Updated (Terbaru)</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'dl-business')">Business 25H2 (Pro/Edu)</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'dl-iot')">IoT Enterprise (Low-End)</button>
+                        </div>
+
+                        <!-- Sub-tab Download Consumer -->
+                        <div id="dl-consumer" class="sub-tab-content" style="display: block;">
+                            <div class="note-box" style="margin: 1rem 0;">
+                                <p><strong>Windows 11 Consumer 25H2 (Build 26200.6584) - Sep 2025</strong></p>
+                                <p style="font-size: 0.9rem;">Available from MSDL, Microsoft Download, and official static links. All ISOs have identical checksums.</p>
+                                <details style="margin-top: 0.5rem; font-size: 0.85rem; cursor: pointer;">
+                                    <summary>Show MVS Filenames (Click to expand)</summary>
+                                    <div class="code-box" style="margin-top: 0.5rem; font-size: 0.75rem;">
+ar-sa_windows_11_consumer_editions_version_25h2_x64_dvd_49defffb.iso
+de-de_windows_11_consumer_editions_version_25h2_x64_dvd_d619edf8.iso
+en-gb_windows_11_consumer_editions_version_25h2_x64_dvd_f18d2cbd.iso
+en-us_windows_11_consumer_editions_version_25h2_x64_dvd_9934ee4c.iso
+es-es_windows_11_consumer_editions_version_25h2_x64_dvd_d632ef37.iso
+fr-ca_windows_11_consumer_editions_version_25h2_x64_dvd_ca309939.iso
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="download-table">
+                                    <thead>
+                                        <tr><th>Language</th><th>Arch</th><th>Link</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>English</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_en-us.iso">Download ISO</a></td></tr>
+                                        <tr><td>English-UK</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_en-gb.iso">Download ISO</a></td></tr>
+                                        <tr><td>Arabic</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_ar-sa.iso">Download ISO</a></td></tr>
+                                        <tr><td>French</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_fr-fr.iso">Download ISO</a></td></tr>
+                                        <tr><td>German</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_de-de.iso">Download ISO</a></td></tr>
+                                        <tr><td>Spanish</td><td>x64</td><td><a href="https://software-static.download.prss.microsoft.com/dbazure/888969d5-f34g-4e03-ac9d-1f9786c66749/26200.6584.250915-1905.25h2_ge_release_svc_refresh_CLIENT_CONSUMER_x64FRE_es-es.iso">Download ISO</a></td></tr>
+                                        <tr><td colspan="3" style="font-style:italic; text-align:center;">Link lain bisa dicek di Massgrave.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab Download Consumer Updated -->
+                        <div id="dl-consumer-upd" class="sub-tab-content" style="display: none;">
+                            <div class="note-box" style="margin: 1rem 0;">
+                                <p><strong>Windows 11 Consumer 25H2 Updated (Build 26200.7171) - Nov 2025</strong></p>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="download-table">
+                                    <thead><tr><th>Language</th><th>Arch</th><th>Link</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>English</td><td>x64</td><td><a href="https://drive.massgrave.dev/en-us_windows_11_consumer_editions_version_25h2_updated_nov_2025_x64_dvd_4ace2901.iso">Download ISO</a></td></tr>
+                                        <tr><td>English-UK</td><td>x64</td><td><a href="https://drive.massgrave.dev/en-gb_windows_11_consumer_editions_version_25h2_updated_nov_2025_x64_dvd_4ace2901.iso">Download ISO</a></td></tr>
+                                        <tr><td>Arabic</td><td>x64</td><td><a href="https://drive.massgrave.dev/ar-sa_windows_11_consumer_editions_version_25h2_updated_nov_2025_x64_dvd_4ace2901.iso">Download ISO</a></td></tr>
+                                        <tr><td>French</td><td>x64</td><td><a href="https://drive.massgrave.dev/fr-fr_windows_11_consumer_editions_version_25h2_updated_nov_2025_x64_dvd_4ace2901.iso">Download ISO</a></td></tr>
+                                        <tr><td>German</td><td>x64</td><td><a href="https://drive.massgrave.dev/de-de_windows_11_consumer_editions_version_25h2_updated_nov_2025_x64_dvd_4ace2901.iso">Download ISO</a></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab Download Business -->
+                        <div id="dl-business" class="sub-tab-content" style="display: none;">
+                            <div class="note-box" style="margin: 1rem 0;">
+                                <p><strong>Windows 11 Business 25H2 (Build 26200.7171) - Nov 2025</strong></p>
+                                <p style="font-size: 0.9rem;">Contains Pro, Enterprise, Education.</p>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="download-table">
+                                    <thead><tr><th>Language</th><th>Arch</th><th>Link</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>English</td><td>x64</td><td><a href="https://drive.massgrave.dev/en-us_windows_11_business_editions_version_25h2_updated_nov_2025_x64_dvd_645b09df.iso">Download ISO</a></td></tr>
+                                        <tr><td>English-UK</td><td>x64</td><td><a href="https://drive.massgrave.dev/en-gb_windows_11_business_editions_version_25h2_updated_nov_2025_x64_dvd_816d9f8e.iso">Download ISO</a></td></tr>
+                                        <tr><td>French</td><td>x64</td><td><a href="https://drive.massgrave.dev/fr-fr_windows_11_business_editions_version_25h2_updated_nov_2025_x64_dvd_6f8d8df4.iso">Download ISO</a></td></tr>
+                                        <tr><td>German</td><td>x64</td><td><a href="https://drive.massgrave.dev/de-de_windows_11_business_editions_version_25h2_updated_nov_2025_x64_dvd_eed98a8d.iso">Download ISO</a></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab Download IoT Enterprise -->
+                        <div id="dl-iot" class="sub-tab-content" style="display: none;">
+                            <div class="note-box" style="margin: 1rem 0;">
+                                <p><strong>Windows 11 IoT Enterprise 25H2 (Non-LTSC)</strong></p>
+                                <p style="font-size: 0.9rem;">Tersedia hanya dalam Bahasa Inggris. Edisi ini sangat ringan karena memiliki Telemetry dan layanan latar belakang yang lebih sedikit secara default.</p>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="download-table">
+                                    <thead><tr><th>Language</th><th>Arch</th><th>Link</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>English</td><td>x64</td><td><a href="https://drive.massgrave.dev/en-us_windows_11_iot_enterprise_version_25h2_x64_dvd_67098cd6.iso">Download ISO</a></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card" style="margin-top: 1rem; padding: 1rem; border: 1px solid #0ea5e9;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: #0ea5e9;">Note for IoT Enterprise (GAC)</h4>
+                                <p class="doc-p" style="font-size: 0.9rem;">If your system has a Pro OEM license in the BIOS, setup might auto-install Pro instead of IoT. To fix this, after installation, run this in CMD as Admin:</p>
+                                <div class="code-box-wrapper">
+                                    <div class="code-box">slmgr.vbs /ipk XQQYW-NFFMW-XJPBH-K8732-CKFFD</div>
+                                    <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Persiapan Clean Install</h3>
+                        <div class="note-box">
+                            <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: #b91c1c;">⚠️ Backup Data Penting</h4>
+                            <p class="doc-p" style="font-size: 0.9rem;">Proses *Clean Install* akan menghapus seluruh data pada partisi sistem (Drive C). Harap **pastikan Anda telah mem-backup semua file penting** dari folder <code>C:\Users/[Username]</code> (Desktop, Documents, Downloads, Pictures) ke partisi lain (D:) atau penyimpanan eksternal.</p>
+                        </div>
+                        <p class="doc-p"><strong>Cek Status Layanan Windows (Deteksi Virus):</strong></p>
+                        <p class="doc-p" style="font-size: 0.9rem;">Jika sistem lama Anda dicurigai terinfeksi virus, virus dapat menyebar ke installer USB. Jalankan perintah ini di PowerShell Admin untuk mengecek status layanan penting:</p>
+                        <div class="code-box-wrapper">
+                            <div class="code-box">sc.exe start "sppsvc" > $null 2>&1; Write-Host "Error code: $LASTEXITCODE"</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p class="doc-p" style="font-size: 0.9rem; margin-top:0.5rem;">Jika output adalah **577** (Windows Defender dinonaktifkan secara permanen) atau **225** (Error file/layanan), sistem Anda mungkin terinfeksi. Gunakan PC lain untuk membuat USB *bootable* jika terjadi error.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">⚠️ Peringatan: Persiapan Driver Jaringan</h3>
+                        <p class="doc-p">Setelah *Clean Install*, Windows mungkin tidak memiliki driver jaringan/Wi-Fi secara *default* saat pertama kali masuk ke *desktop*. Untuk mengatasi hal ini, Anda sangat disarankan untuk:</p>
+                        <ul class="doc-ul">
+                            <li>**Download driver jaringan** (Wi-Fi dan Ethernet) PC/Laptop Anda dari situs resmi produsen (HP, Lenovo, ASUS, dll.) *sebelum* proses instalasi.</li>
+                            <li>Simpan file driver tersebut di Flashdisk atau penyimpanan eksternal yang mudah diakses.</li>
+                            <li>Ini memastikan Anda bisa langsung terkoneksi internet untuk langkah aktivasi dan update selanjutnya.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Membuat Bootable USB (Rufus)</h3>
+                        <p class="doc-p">Gunakan aplikasi <a href="https://rufus.ie/" target="_blank" style="color: var(--accent-color);">Rufus</a> untuk membuat installer dengan kemampuan *bypass* persyaratan hardware.</p>
+                        <ul class="doc-ul">
+                            <li>Colokkan Flashdisk (Perhatian: Semua data di dalamnya akan dihapus).</li>
+                            <li>Buka Rufus, pilih ISO Windows 11 Anda.</li>
+                            <li>Klik START. **Pastikan Anda mencentang opsi** "Remove requirement for 4GB+ RAM, Secure Boot and TPM 2.0" & "Online Microsoft account".</li>
+                        </ul>
+
+                        <div style="margin-top: 1.5rem;">
+                            <details class="clickable-details">
+                                <summary>🛠️ Opsi Advanced: Install Edisi IoT Enterprise</summary>
+                                <div style="margin-top: 1rem; font-size: 0.9rem;">
+                                    <p class="doc-p">Untuk menginstal edisi **IoT Enterprise** secara paksa, yang merupakan versi paling ringan:</p>
+                                    <p class="doc-p">Di dalam Flashdisk Installer yang sudah dibuat Rufus, buka folder <code>\sources\</code>, buat file bernama **PID.txt**, dan isi dengan kode berikut:</p>
+                                    
+                                    <p style="font-weight: 600; margin-top:0.5rem;">Untuk IoT Enterprise GAC (Standard):</p>
+                                    <div class="code-box-wrapper">
+                                        <div class="code-box">[PID]
+Value=XQQYW-NFFMW-XJPBH-K8732-CKFFD</div>
+                                        <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+
+                                    <p style="font-weight: 600; margin-top:0.5rem;">Untuk IoT Enterprise LTSC (Jangka Panjang):</p>
+                                    <div class="code-box-wrapper">
+                                        <div class="code-box">[PID]
+Value=CGK42-GYN6Y-VD22B-BX98W-J8JXD</div>
+                                        <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+
+                                    <p class="doc-p" style="margin-top:0.5rem; font-size: 0.85rem;"><em>File PID.txt ini akan memaksa Setup memilih edisi yang Anda tentukan saat instalasi.</em></p>
+                                </div>
+                            </details>
+
+                            <details class="clickable-details">
+                                <summary>📋 Opsi Advanced: Munculkan Semua Pilihan Edisi (ei.cfg)</summary>
+                                <div style="margin-top: 1rem; font-size: 0.9rem;">
+                                    <p class="doc-p">Jika laptop Anda memiliki lisensi bawaan (OEM) di BIOS (misalnya Windows Home), installer akan otomatis memilih edisi tersebut. Untuk memunculkan semua pilihan edisi (Home, Pro, Enterprise, dll.):</p>
+                                    <p class="doc-p">Di folder <code>\sources\</code> pada flashdisk, buat file **ei.cfg** dengan isi:</p>
+                                    <div class="code-box-wrapper">
+                                        <div class="code-box">[Channel]
+NoKeyChannel</div>
+                                        <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+                                    <p class="doc-p" style="margin-top:0.5rem; font-size: 0.85rem;">**Catatan:** Pilih opsi "Previous version of setup" saat booting installer (jika muncul) agar trik ini bekerja di Windows 11 versi terbaru (24H2+).</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Proses Clean Install</h3>
+                        <p class="doc-p">Langkah krusial untuk memastikan sistem benar-benar bersih dan ringan:</p>
+                        <ul class="doc-ul">
+                            <li>Cabut semua *harddisk* eksternal atau flashdisk lain (hanya sisakan Flashdisk Installer) untuk keamanan data.</li>
+                            <li>Restart PC, tekan tombol **Boot Menu** (biasanya F11, F12, Esc, atau Del sesuai merk PC Anda).</li>
+                            <li>Pilih Flashdisk USB Anda di menu *Boot*.</li>
+                            <li>Pilih "Custom: Install Windows only" saat ditanya jenis instalasi.</li>
+                            <li>**Hapus semua partisi** yang berkaitan dengan sistem lama (Drive C: System, Reserved, Primary) hingga hanya tersisa **"Unallocated Space"** (ruang yang tidak teralokasi). Kemudian, klik **Next**. *Ini penting untuk menghilangkan sisa-sisa bloatware lama.*</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Tips: Bypass Syarat Internet & Akun Microsoft (OOBE)</h3>
+                        <p class="doc-p">Jika Anda tidak menggunakan opsi *bypass* Rufus dan terhenti di layar "Let's connect you to a network", ikuti langkah manual ini untuk memaksa masuk ke mode *Local Account*:</p>
+                        
+                        <ol class="doc-ul" style="list-style-type: decimal; margin-left: 1.5rem;">
+                            <li>Tekan tombol **Shift + F10** untuk membuka *Command Prompt*.</li>
+                            <li>Ketik perintah ini dan tekan Enter:</li>
+                        </ol>
+
+                        <div class="code-box-wrapper">
+                            <div class="code-box">start ms-cxh:localonly</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <p class="doc-p" style="margin-top: 1rem;">Komputer akan *restart* ke mode OOBE (Out-of-Box Experience) dan opsi untuk membuat akun lokal (*offline account*) akan muncul.</p>
+                        
+                        <div class="video-inset-wrapper">
+                            <video controls class="styled-video">
+                                <source src="https://gravesoft.dev/bypass_windows_11_internet_and_microsoft_account_requirement.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung pemutaran video ini.
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <div class="card highlight-yellow">
+                        <h3 class="doc-heading">Troubleshooting Instalasi</h3>
+                        <ul class="doc-ul">
+                            <li>**Error 'PC doesn't meet the minimum requirements':** Cek ulang bahwa Anda telah mencentang opsi *bypass* di Rufus, atau pastikan TPM 2.0 dan Secure Boot sudah di-enable di BIOS/UEFI.</li>
+                            <li>**Error Code 0xC1900101 (atau sejenisnya):** Umumnya masalah driver atau *hardware* yang tidak kompatibel. Pastikan driver GPU/Chipset sudah di-*update* ke versi stabil.</li>
+                            <li>**Setup keluar tiba-tiba:** Cek kesehatan RAM (*Memory Diagnostic*) dan pastikan flashdisk Anda tidak rusak.</li>
+                        </ul>
+                    </div>
+
+                    <!-- START: ROLLBACK & RECOVERY CARD -->
+                    <div class="card highlight-yellow">
+                        <h3 class="doc-heading">Prosedur Rollback & Pemulihan</h3>
+                        <p class="doc-p">Karena langkah optimasi bersifat permanen dan agresif, **sangat disarankan** Anda menguasai cara pemulihan sistem:</p>
+                        <ul class="doc-ul">
+                            <li>**Backup Image Sistem:** Kami merekomendasikan pembuatan **System Image** dengan alat seperti Macrium Reflect (sebelum instalasi) untuk *Rollback* cepat.</li>
+                            <li>**Pemulihan Sistem:** Jika hanya terjadi error kecil (*service* mati, *file* rusak), buka **PowerShell Admin** dan jalankan perintah perbaikan sistem:
+                                <div class="code-box-wrapper" style="margin-top: 0.5rem;">
+                                    <pre class="code-box"><code>sfc /scannow &amp;&amp; DISM /Online /Cleanup-Image /RestoreHealth</code></pre>
+                                    <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </li>
+                            <li>**Rollback Total:** Jika semua gagal, Anda harus mengulang proses **Clean Install** dari Bab 2.</li>
+                        </ul>
+                    </div>
+                    <!-- END: ROLLBACK & RECOVERY CARD -->
+
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- Live Region for Accessibility -->
+    <div id="aria-copy-live" aria-live="polite" style="position:absolute;left:-9999px;"></div>
+
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            try {
+                // Menggunakan closest dan querySelector untuk robustness
+                const wrapper = btn.closest('.code-box-wrapper');
+                const codeBox = wrapper.querySelector('.code-box');
+                // Mengambil konten, membersihkan entitas HTML (&lt;, &gt;, &amp;) untuk salin murni
+                const code = codeBox.textContent.trim();
+                
+                navigator.clipboard.writeText(code).then(() => {
+                    // Feedback Visual
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                    setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+
+                    // Feedback Accessibility (aria-live)
+                    const live = document.getElementById('aria-copy-live');
+                    if (live) live.textContent = 'Teks disalin ke clipboard';
+
+                }).catch(err => {
+                    console.error('Gagal menyalin:', err);
+                    alert('Gagal menyalin. Silakan salin manual.');
+                });
+            } catch (err) {
+                console.error('Copy failed', err);
+                alert('Gagal menyalin. Silakan salin manual.');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstSubTabBtn = document.querySelector('.sub-tab-btn');
+            const firstSubTabContent = document.querySelector('.sub-tab-content');
+            
+            if (firstSubTabBtn && firstSubTabContent) {
+                if (!firstSubTabBtn.classList.contains('active')) {
+                    firstSubTabBtn.classList.add('active');
+                    firstSubTabContent.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 1. Pendahuluan</title>
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">intro</p>
+        
+        <div class="profile-nav-container">
+            <div class="nav-controls">
+                <a href="#" class="nav-icon-btn" style="opacity: 0.5; cursor: default;" title="Awal"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="install.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="intro" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">1. Pendahuluan</h2>
+                        <p class="page-desc">Mengapa Windows 11 di Laptop/Pc Low-end Perlu Optimasi.</p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Tujuan Utama Dokumentasi</h3>
+                        <p class="doc-p">Dokumentasi <strong>Win-Doc</strong> ini disusun khusus untuk pengguna laptop/PC dengan spesifikasi terbatas, terutama yang hanya memiliki **RAM 4GB** atau penyimpanan berbasis HDD lama. Tujuannya adalah untuk mengubah instalasi Windows 11 standar yang berat menjadi sistem operasi yang sangat ringan dan responsif, membuatnya nyaman untuk tugas sehari-hari seperti *browsing*, Office, atau bahkan gaming ringan.</p>
+                        <p class="doc-p">Kami akan memandu Anda melalui proses instalasi bersih (Clean Install), optimasi sistem mendalam (*debloating*), hingga pemilihan aplikasi esensial yang ringan.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Tantangan RAM 4GB (Mengapa Optimasi Penting)</h3>
+                        <p class="doc-p">Menjalankan Windows 11 pada laptop dengan RAM 4GB bisa menjadi tantangan karena sistem operasi modern memakan banyak resource. Secara default, Windows 11 menggunakan sekitar 2.5GB - 3GB RAM saat idle. Panduan ini bertujuan memangkas penggunaan tersebut hingga **di bawah 1.5GB saat idle** agar aplikasi lain bisa berjalan lancar dan bebas *lagging*.</p>
+                        <div class="doc-p" style="font-weight: 600; color: #b91c1c;">
+                            ⚠️ **Penting: Selalu backup data penting Anda sebelum melakukan instalasi ulang atau modifikasi sistem yang mendalam.** Proses ini melibatkan format ulang disk sistem.
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Persiapan Bahan & Kondisi Awal</h3>
+                        <p class="doc-p">Sebelum memulai langkah instalasi, pastikan Anda telah menyiapkan bahan-bahan berikut:</p>
+                        <ul class="doc-ul">
+                            <li>**Flashdisk minimal 8GB** (Kosongkan isinya, akan digunakan untuk membuat *bootable* USB).</li>
+                            <li>Koneksi Internet yang stabil.</li>
+                            <li>Laptop/PC target (Pastikan terhubung dengan charger untuk menghindari kegagalan proses).</li>
+                            <li>Lisensi atau metode aktivasi yang sah (dibahas di Bab 3).</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Risiko & Penafian</h3>
+                        <p class="doc-p">Optimasi sistem yang agresif seperti yang dibahas di sini (misalnya menggunakan Atlas OS atau *debloating* manual) dapat menonaktifkan beberapa fitur standar Windows, seperti Windows Defender, Telemetry, atau bahkan Windows Update otomatis. Harap dipahami:</p>
+                        <ul class="doc-ul">
+                            <li>Langkah-langkah ini sepenuhnya menjadi **tanggung jawab Anda**.</li>
+                            <li>Optimasi ditujukan untuk **performa**, bukan kompatibilitas maksimal.</li>
+                            <li>Disarankan untuk menggunakan Edisi **Pro** atau **IoT Enterprise** untuk fleksibilitas optimasi.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            const codeBox = btn.previousElementSibling;
+            const code = codeBox.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

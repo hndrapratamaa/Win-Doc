@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Win-Doc - 6. Microsoft Office (ODT)</title>
+    
+    <meta name="description" content="Cara resmi dan paling ringan untuk menginstal Microsoft Office (Word, Excel, PPT) menggunakan Office Deployment Tool (ODT) untuk performa optimal di PC low-end.">
+    
+    <link rel="icon" href="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" class="profile-image" alt="Profile Picture">
+        <h1 class="profile-name">Win Doc</h1>
+        <p class="page-desc">Panduan Optimasi Windows 11 </p>
+
+        <div class="profile-nav-container">
+            <div class="nav-controls" role="navigation" aria-label="Navigasi Halaman">
+                <a href="manual.html" class="nav-icon-btn" title="Kembali"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="startup.html" class="nav-icon-btn" title="Lanjut"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <a href="https://hndrapratamaa.github.io/Profile/#projects" class="repo-btn" aria-label="Go back to projects">
+                <i class="fa-solid fa-arrow-left"></i> Go Back 
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section id="office" class="tab-content">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2 class="page-title">6. Microsoft Office (ODT)</h2>
+                        <p class="page-desc">Cara resmi & paling ringan install Office menggunakan Office Deployment Tool.</p>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <h3 class="doc-heading">Apa itu ODT?</h3>
+                        <p class="doc-p">Office Deployment Tool (ODT) adalah alat resmi Microsoft yang memungkinkan kita mengunduh dan menginstal versi Office (Click-to-Run) dengan konfigurasi yang bisa disesuaikan (misalnya hanya Word, Excel, PowerPoint). Metode ini jauh lebih **bersih, cepat, dan ringan** dibandingkan installer standar.</p>
+                        <p class="doc-p" style="font-size: 0.9rem; font-style: italic; color: #555;">Catatan: Konfigurasi yang kita gunakan (<code style="font-size: 0.9rem;">Channel="PerpetualVL2021"</code>) adalah untuk lisensi Volume (Office 2021), yang kompatibel dengan metode aktivasi KMS (seperti OHook di Bab 3).</p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Langkah 1: Persiapan Bahan</h3>
+                        <ol class="doc-ul" style="list-style-type: decimal; margin-left: 1.5rem;">
+                            <li>Download **Office Deployment Tool** dari situs resmi Microsoft.</li>
+                            <li>Buat folder baru di Local Disk C, beri nama <code>Office</code> (Jalur: <code>C:\Office</code>).</li>
+                            <li>Jalankan file ODT yang didownload, **ekstrak isinya** ke folder <code>C:\Office</code> yang baru dibuat. Pastikan file <code>setup.exe</code> berada di folder ini.</li>
+                        </ol>
+                        <!-- PENGGANTIAN INLINE STYLE DENGAN CLASS ACCENT-BG -->
+                        <a href="https://download.microsoft.com/download/6c1eeb25-cf8b-41d9-8d0d-cc1dbc032140/officedeploymenttool_19328-20210.exe" class="credit-btn accent-bg" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                            <i class="fa-solid fa-download"></i> Download Office Deployment Tool
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Langkah 2: Konfigurasi (XML Hemat Resource)</h3>
+                        <p class="doc-p">Buat file bernama **Configuration.xml** di folder <code>C:\Office</code>. XML ini dikonfigurasi untuk hanya menginstal **Word, Excel, dan PowerPoint** untuk menghemat sumber daya dan ruang disk:</p>
+                        
+                        <div class="code-box-wrapper">
+                            <div class="code-box">&lt;Configuration&gt;
+  &lt;Add OfficeClientEdition="64" Channel="PerpetualVL2021"&gt;
+    &lt;Product ID="ProPlus2021Volume"&gt;
+      &lt;Language ID="id-id" /&gt;
+      &lt;ExcludeApp ID="Access" /&gt;
+      &lt;ExcludeApp ID="Groove" /&gt;
+      &lt;ExcludeApp ID="Lync" /&gt;
+      &lt;ExcludeApp ID="OneNote" /&gt;
+      &lt;ExcludeApp ID="Outlook" /&gt;
+      &lt;ExcludeApp ID="Publisher" /&gt;
+      &lt;ExcludeApp ID="Teams" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+  &lt;Display Level="None" AcceptEULA="TRUE" /&gt;
+&lt;/Configuration&gt;</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy XML">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- PENGGANTIAN INLINE STYLE DENGAN CLASS TEXT-NOTE-CENTER -->
+                        <div class="doc-p text-note-center">(Pastikan nama filenya tetap **Configuration.xml**)</div>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <details class="clickable-details" style="margin-bottom: 0;">
+                                <summary>Opsi Advanced: Instalasi Office Penuh (Full Apps)</summary>
+                                <div style="margin-top: 1rem; font-size: 0.9rem;">
+                                    <p class="doc-p">Untuk menginstal **semua aplikasi Office** (termasuk Outlook dan OneNote), gunakan XML berikut. Salin dan ganti isi <strong>Configuration.xml</strong> dengan kode ini:</p>
+                                    <div class="code-box-wrapper">
+                                        <div class="code-box">&lt;Configuration&gt;
+  &lt;Add OfficeClientEdition="64" Channel="PerpetualVL2021"&gt;
+    &lt;Product ID="ProPlus2021Volume"&gt;
+      &lt;Language ID="id-id" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+  &lt;Display Level="None" AcceptEULA="TRUE" /&gt;
+&lt;/Configuration&gt;</div>
+                                        <button class="copy-btn" onclick="copyCode(this)" title="Copy XML"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="doc-heading">Langkah 3: Eksekusi Perintah di CMD</h3>
+                        <p class="doc-p">Sekarang kita akan memerintahkan ODT untuk mendownload dan menginstal Office. **Wajib Buka Command Prompt sebagai Administrator**.</p>
+                        
+                        <p class="doc-p">1. Masuk ke folder Office dengan perintah:</p>
+                        <div class="code-box-wrapper">
+                            <div class="code-box">cd /d C:\Office\</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <p class="doc-p">2. Perintah Download (Mengunduh file instalasi ke folder):</p>
+                        <div class="code-box-wrapper">
+                            <div class="code-box">setup.exe /download Configuration.xml</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <!-- PENGGANTIAN INLINE STYLE DENGAN CLASS TEXT-WARNING -->
+                        <div class="doc-p text-warning" style="font-size: 0.9rem;">⚠️ Perhatian: Saat *download*, CMD terlihat kosong/diam (tidak ada progress bar). Itu normal. Biarkan jendela CMD tetap terbuka. Proses selesai jika kursor prompt kembali muncul.</div>
+
+
+                        <p class="doc-p">3. Perintah Install (Menginstal Office dari file yang sudah diunduh):</p>
+                        <div class="code-box-wrapper">
+                            <div class="code-box">setup.exe /configure Configuration.xml</div>
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy command"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        
+                        <div class="note-box" style="margin-top: 1.5rem;">
+                            <p class="doc-p" style="margin-bottom:0; font-weight: 600;">✅ Instalasi selesai. Anda bisa menghapus folder <code>C:\Office</code>. Lanjutkan ke Bab 3 (MAS) untuk aktivasi Office.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card highlight-yellow">
+                        <h3 class="doc-heading">Troubleshooting ODT</h3>
+                        <ul class="doc-ul">
+                            <li>**Error 0-1018 (atau sejenisnya):** Biasanya terjadi karena konflik lisensi Office lama. Coba *uninstall* semua versi Office dan *reboot* sebelum mencoba lagi.</li>
+                            <li>**Setup.exe langsung tertutup:** Kemungkinan besar Anda tidak menjalankan **Command Prompt sebagai Administrator** atau ada kesalahan pengetikan di perintah <code style="font-size: 0.9rem;">cd /d C:\Office\</code>.</li>
+                            <li>**Download stuck di 0% (tidak bergerak):** Koneksi internet tidak stabil, atau ada masalah *permission* di folder <code>C:\Office</code>. Coba jalankan perintah *download* dari folder lain (misalnya dari *Downloads*).</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p class="documented-by">Documented by</p>
+                    <a href="https://github.com/hndrapratamaa/windows-docs" class="profile-pill">
+                        <img src="https://hndrapratamaa.github.io/Profile/assets/img/profile.jpg" alt="Profile">
+                        <span>hndrapratamaa</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        function openSubTab(evt, subTabId) {
+            var i, subContents, subBtns;
+            var container = evt.currentTarget.parentElement.parentElement;
+            
+            subContents = container.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = "none";
+            }
+
+            subBtns = container.getElementsByClassName("sub-tab-btn");
+            for (i = 0; i < subBtns.length; i++) {
+                subBtns[i].className = subBtns[i].className.replace(" active", "");
+            }
+
+            document.getElementById(subTabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function copyCode(btn) {
+            const codeBox = btn.previousElementSibling;
+            const code = codeBox.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i>';
+                setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+        }
+    </script>
+</body>
+</html>

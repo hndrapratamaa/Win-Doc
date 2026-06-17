@@ -4,24 +4,18 @@
     <meta charset="UTF-8" />
     <title>Win Doc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="fade-in">
     <header class="profile-header">
       <img src="assets/profile.png" class="profile-image" />
       <h1 class="profile-name">Win Doc</h1>
-      <p>Mengapa Windows 11 di Laptop/PC Low-end Perlu Optimasi.</p>
-
-      <div class="previous-page-button-container">
+      <p class="page-desc">Mengapa Windows 11 di Laptop/PC Low-end Perlu Optimasi.</p>
+      <div class="previous-page-button-container" style="margin-bottom: 1rem;">
         <button class="previous-page-button">‹</button>
         <button class="previous-page-button">›</button>
       </div>
-
       <button class="previous-page-button" onclick="window.location.href='https://hndrapratamaa.github.io/Profile'">Go Back</button>
     </header>
 
@@ -30,86 +24,80 @@
         <div class="section-header">
           <div class="header-content">
             <h2 class="page-title">Daftar Dokumentasi</h2>
-            <p class="page-desc">
-              Pilih modul di bawah ini untuk memulai proses optimasi Windows 11.
-            </p>
+            <p class="page-desc">Pilih modul di bawah ini untuk memulai proses optimasi Windows 11.</p>
           </div>
         </div>
 
         <div class="card-container">
           
-          <a href="docs/install.html" class="card">
+          <div class="card" onclick="window.location.href='docs/install.html'">
             <div class="card-content">
               <h3 class="project-title">1. Panduan Instalasi (Persiapan)</h3>
-              <p class="project-desc">
-                Langkah awal deployment. Siapkan Flashdisk 8GB, internet stabil, charger, dan pastikan lisensi valid.
-              </p>
+              <p class="project-desc">Langkah awal deployment. Siapkan Flashdisk 8GB, internet stabil, charger, dan pastikan lisensi valid.</p>
               <div class="tech-tags">
                 <span class="tag">Setup</span>
                 <span class="tag">Core</span>
               </div>
             </div>
-          </a>
+            <div class="previous-page-button">›</div>
+          </div>
 
-          <a href="docs/atlas.html" class="card">
+          <div class="card" onclick="window.location.href='docs/atlas.html'">
             <div class="card-content">
               <h3 class="project-title">2. Atlas OS Guide</h3>
-              <p class="project-desc">
-                Dokumentasi optimasi untuk pengguna spesifikasi rendah agar Windows 11 menjadi lebih ringan dan responsif.
-              </p>
+              <p class="project-desc">Dokumentasi optimasi untuk pengguna spesifikasi rendah agar Windows 11 menjadi lebih ringan dan responsif.</p>
               <div class="tech-tags">
                 <span class="tag">Tweaks</span>
                 <span class="tag">RAM 4GB</span>
               </div>
             </div>
-          </a>
+            <div class="previous-page-button">›</div>
+          </div>
 
-          <a href="docs/startup.html" class="card">
+          <div class="card" onclick="window.location.href='docs/startup.html'">
             <div class="card-content">
               <h3 class="project-title">3. Optimasi Startup & Services</h3>
-              <p class="project-desc">
-                Pangkas default 2.5GB–3GB idle memory, dengan target optimasi menembus ±1.5GB RAM usage.
-              </p>
+              <p class="project-desc">Pangkas default 2.5GB–3GB idle memory, dengan target optimasi menembus ±1.5GB RAM usage.</p>
               <div class="tech-tags">
                 <span class="tag">Backup dulu</span>
               </div>
             </div>
-          </a>
+            <div class="previous-page-button">›</div>
+          </div>
 
-          <a href="docs/manual.html" class="card">
+          <div class="card" onclick="window.location.href='docs/manual.html'">
             <div class="card-content">
               <h3 class="project-title">4. Manual Book & Risiko Fitur</h3>
-              <p class="project-desc">
-                Beberapa fitur bawaan akan berkurang demi fokus performa. Sangat disarankan menggunakan Windows edisi Pro/IoT.
-              </p>
+              <p class="project-desc">Beberapa fitur bawaan akan berkurang demi fokus performa. Sangat disarankan menggunakan Windows edisi Pro/IoT.</p>
               <div class="tech-tags">
                 <span class="tag">Risk Warning</span>
                 <span class="tag">Pro / IoT</span>
               </div>
             </div>
-          </a>
+            <div class="previous-page-button">›</div>
+          </div>
 
-          <a href="docs/mas.html" class="card">
+          <div class="card" onclick="window.location.href='docs/mas.html'">
             <div class="card-content">
               <h3 class="project-title">5. Aktivasi Sistem (MAS)</h3>
-              <p class="project-desc">
-                Panduan validasi lisensi sistem operasi pasca instalasi secara aman dan bersih.
-              </p>
+              <p class="project-desc">Panduan validasi lisensi sistem operasi pasca instalasi secara aman dan bersih.</p>
               <div class="tech-tags">
                 <span class="tag">Activation</span>
               </div>
-            </a>
+            </div>
+            <div class="previous-page-button">›</div>
+          </div>
 
-          <a href="docs/office.html" class="card">
+          <div class="card" onclick="window.location.href='docs/office.html'">
             <div class="card-content">
               <h3 class="project-title">6. Deployment Microsoft Office</h3>
-              <p class="project-desc">
-                Cara instalasi paket aplikasi produktivitas Office yang efisien tanpa membebani background services.
-              </p>
+              <p class="project-desc">Cara instalasi paket aplikasi produktivitas Office yang efisien tanpa membebani background services.</p>
               <div class="tech-tags">
                 <span class="tag">Office</span>
               </div>
-          </a>
+            </div>
+            <div class="previous-page-button">›</div>
+          </div>
 
         </div>
       </div>

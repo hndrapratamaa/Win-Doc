@@ -1,93 +1,133 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #e6e9ef;
+:root {
+  --bg: #e0e5ec;
+  --light: #ffffff;
+  --dark: #a3b1c6;
+  --radius: 20px;
+  --text: #2a2a2a;
 }
 
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* WRAPPER */
 .wrapper {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
   padding: 20px;
 }
 
+/* PROFILE */
 .profile {
   text-align: center;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: var(--radius);
   margin-bottom: 20px;
-
-  background: #e6e9ef;
-  box-shadow: 6px 6px 12px #c5c8ce, -6px -6px 12px #ffffff;
+  background: var(--bg);
+  box-shadow: 8px 8px 16px var(--dark), -8px -8px 16px var(--light);
 }
 
 .avatar {
-  width: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
+  box-shadow: 4px 4px 10px var(--dark), -4px -4px 10px var(--light);
 }
 
 .profile span {
-  color: gray;
+  color: #666;
   font-size: 14px;
 }
 
+/* NAV */
 .nav {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .nav button {
   margin: 0 5px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border: none;
   border-radius: 10px;
-  background: #e6e9ef;
-  box-shadow: 3px 3px 6px #c5c8ce, -3px -3px 6px #ffffff;
+  background: var(--bg);
+  cursor: pointer;
+  box-shadow: 4px 4px 8px var(--dark), -4px -4px 8px var(--light);
 }
 
+.nav button:active {
+  box-shadow: inset 2px 2px 5px var(--dark),
+              inset -2px -2px 5px var(--light);
+}
+
+/* BACK BUTTON */
 .back {
   margin-top: 10px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border: none;
   border-radius: 10px;
-  background: #e6e9ef;
-  box-shadow: 3px 3px 6px #c5c8ce, -3px -3px 6px #ffffff;
+  background: var(--bg);
+  cursor: pointer;
+  box-shadow: 4px 4px 8px var(--dark), -4px -4px 8px var(--light);
 }
 
+.back:active {
+  box-shadow: inset 2px 2px 5px var(--dark),
+              inset -2px -2px 5px var(--light);
+}
+
+/* CONTENT */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
+/* FIX UTAMA ADA DI SINI */
 .box {
-  padding: 15px;
-  border-radius: 15px;
-
-  background: #e6e9ef;
-  box-shadow: 6px 6px 12px #c5c8ce, -6px -6px #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: 8px 8px 16px var(--dark), -8px -8px 16px var(--light);
+  transition: 0.2s ease;
 }
 
+.box:active {
+  box-shadow: inset 4px 4px 8px var(--dark),
+              inset -4px -4px 8px var(--light);
+}
+
+/* TEXT */
 .box h2,
 .box h3 {
   margin: 0 0 10px;
 }
 
 .warn {
-  color: orange;
+  color: #d97706;
   font-size: 13px;
+  font-weight: 500;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 footer img {
-  width: 150px;
-  border-radius: 15px;
+  width: 160px;
+  border-radius: 20px;
   margin: 10px 0;
+  box-shadow: 8px 8px 16px var(--dark), -8px -8px 16px var(--light);
 }
 
 footer a {
   font-size: 12px;
+  color: #6d28d9;
 }

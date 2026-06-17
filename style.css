@@ -1,285 +1,96 @@
-:root {
-    --bg-color: #e0e5ec;
-    --card-bg: #e0e5ec;
-    --text-color: #2a2a2a;
-
-    --shadow-light: 8px 8px 16px #a3b1c6;
-    --shadow-dark: -8px -8px 16px #ffffff;
-
-    --box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
-    --box-shadow-inset: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
-    --btn-active: inset 2px 2px 5px #bec3c9, inset -2px -2px 5px #ffffff;
-
-    --radius: 18px;
-    --radius-sm: 12px;
-
-    --spacing: 1.4rem;
-
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    --accent-color: #0ea5e9;
-    --accent-color-dark: #0284c7;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-body);
-    line-height: 1.6;
-}
-
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-color);
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e6e9ef;
 }
 
-.profile-header {
-    margin: var(--spacing);
-    padding: var(--spacing);
-    border-radius: var(--radius);
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
 }
 
-.profile-image {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--bg-color);
-    box-shadow: var(--box-shadow);
-    margin-bottom: 1rem;
-}
-
-.profile-name {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-}
-
-main {
-    flex: 1;
-    width: 100%;
-    padding: var(--spacing);
-}
-
-.main-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.section-header {
-    padding: 1.4rem;
-    border-radius: var(--radius);
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-    margin-bottom: var(--spacing);
-}
-
-.page-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-}
-
-.page-desc {
-    font-size: 0.95rem;
-    opacity: 0.7;
-}
-
-.nav-controls {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.nav-icon-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: var(--radius-sm);
-    background: var(--card-bg);
-    border: none;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.nav-icon-btn:hover {
-    transform: translateY(-2px);
-    color: var(--accent-color);
-}
-
-.nav-icon-btn:active {
-    box-shadow: var(--btn-active);
-    transform: translateY(1px);
-}
-
-.repo-btn {
-    padding: 10px 18px;
-    border-radius: var(--radius-sm);
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.2s;
-}
-
-.repo-btn:hover {
-    transform: translateY(-2px);
-    color: var(--accent-color);
-}
-
-.card-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
-}
-
+/* CARD GLOBAL */
 .card {
-    padding: 1.8rem;
-    border-radius: var(--radius);
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
+  background: #e6e9ef;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  box-shadow: 
+    8px 8px 16px #c5c8ce,
+    -8px -8px 16px #ffffff;
 }
 
-.doc-heading {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 1.2rem 0 0.8rem;
+/* PROFILE */
+.profile {
+  text-align: center;
 }
 
-.doc-p {
-    margin-bottom: 0.9rem;
-    text-align: justify;
+.avatar {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+
+  box-shadow:
+    4px 4px 10px #c5c8ce,
+    -4px -4px 10px #ffffff;
 }
 
-.doc-ul {
-    margin-left: 1.4rem;
-    margin-bottom: 1rem;
+.subtitle {
+  color: #777;
+  margin-bottom: 10px;
 }
 
-.code-box-wrapper {
-    position: relative;
-    margin: 1rem 0;
+/* BUTTON */
+.nav-btn button,
+.back {
+  border: none;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 10px;
+  background: #e6e9ef;
+
+  box-shadow:
+    4px 4px 8px #c5c8ce,
+    -4px -4px 8px #ffffff;
+
+  cursor: pointer;
 }
 
-.code-box {
-    padding: 1.3rem;
-    padding-right: 3rem;
-    border-radius: var(--radius-sm);
-    font-family: monospace;
-    font-size: 0.85rem;
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow-inset);
-    overflow-x: auto;
+.nav-btn button:active,
+.back:active {
+  box-shadow: inset 2px 2px 5px #c5c8ce,
+              inset -2px -2px 5px #ffffff;
 }
 
-.copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    border: none;
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
+/* TEXT */
+h1, h2, h3 {
+  margin: 0 0 10px;
 }
 
-.copy-btn:active {
-    box-shadow: var(--btn-active);
+.desc {
+  color: #666;
 }
 
-.sub-tabs-scroll {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1.2rem;
+.warning {
+  color: #d97706;
+  font-weight: bold;
 }
 
-.sub-tab-btn {
-    padding: 8px 14px;
-    border-radius: var(--radius-sm);
-    border: none;
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-.sub-tab-btn.active {
-    box-shadow: var(--btn-active);
-    color: var(--accent-color);
-}
-
-.table-wrapper {
-    overflow-x: auto;
-    padding: 1rem;
-    border-radius: var(--radius);
-    box-shadow: var(--box-shadow-inset);
-}
-
-.download-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-}
-
-.download-table td,
-.download-table th {
-    padding: 8px;
-}
-
-.download-table a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-.note-box {
-    padding: 1rem;
-    border-radius: var(--radius);
-    background: var(--card-bg);
-    box-shadow: var(--box-shadow);
-}
-
+/* FOOTER */
 .footer {
-    text-align: center;
-    padding: 2rem var(--spacing);
-    margin-top: auto;
+  text-align: center;
+  margin-top: 30px;
 }
 
-@media (max-width: 768px) {
-    :root {
-        --spacing: 1rem;
-    }
+.footer-img {
+  width: 200px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
 
-    .profile-name {
-        font-size: 1.7rem;
-    }
-
-    .card {
-        padding: 1.4rem;
-    }
-
-    .code-box {
-        font-size: 0.8rem;
-    }
+.footer a {
+  font-size: 12px;
+  color: purple;
 }

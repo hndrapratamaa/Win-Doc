@@ -13,69 +13,116 @@
   </head>
   <body>
     <header class="profile-header">
+      <!-- Jalur gambar profil diganti ke assets/ karena filenya mau lu pindah ke sana -->
       <img src="assets/profile.png" class="profile-image" />
       <h1 class="profile-name">Win Doc</h1>
-      <p>intro</p>
+      <p>Mengapa Windows 11 di Laptop/PC Low-end Perlu Optimasi.</p>
 
       <div class="previous-page-button-container">
         <button class="previous-page-button">‹</button>
         <button class="previous-page-button">›</button>
       </div>
 
-      <button class="previous-page-button">Go Back</button>
+      <!-- Tombol balik ke web profil lu blay -->
+      <button class="previous-page-button" onclick="window.location.href='https://hndrapratamaa.github.io/Profile'">Go Back</button>
     </header>
 
     <main>
       <div class="main-content">
         <div class="section-header">
           <div class="header-content">
-            <h2 class="page-title">Pendahuluan</h2>
+            <h2 class="page-title">Daftar Dokumentasi</h2>
             <p class="page-desc">
-              Mengapa Windows 11 di Laptop/Pc Low-end Perlu Optimasi.
+              Pilih modul di bawah ini untuk memulai proses optimasi Windows 11.
             </p>
           </div>
         </div>
 
+        <!-- 
+          Card dirubah jadi tag <a> biar bisa diklik langsung menuju folder docs/.
+          Isi teks lama lu (Tujuan, RAM 4GB, dll) tetep gua pertahanin sebagai deskripsi modulnya!
+        -->
         <div class="card-container">
-          <div class="card">
+          
+          <!-- Modul 1: Installation -->
+          <a href="docs/install.html" class="card">
             <div class="card-content">
-              <h3 class="project-title">Tujuan</h3>
+              <h3 class="project-title">1. Panduan Instalasi (Persiapan)</h3>
               <p class="project-desc">
-                Dokumentasi ini untuk pengguna spesifikasi rendah agar Windows
-                11 lebih ringan dan responsif.
+                Langkah awal deployment. Siapkan Flashdisk 8GB, internet stabil, charger, dan pastikan lisensi valid.
               </p>
+              <div class="tech-tags">
+                <span class="tag">Setup</span>
+                <span class="tag">Core</span>
+              </div>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
+          <!-- Modul 2: Atlas OS Guide -->
+          <a href="docs/atlas.html" class="card">
             <div class="card-content">
-              <h3 class="project-title">RAM 4GB</h3>
+              <h3 class="project-title">2. Atlas OS Guide</h3>
               <p class="project-desc">
-                Default 2.5GB–3GB idle, target optimasi ±1.5GB.
+                Dokumentasi optimasi untuk pengguna spesifikasi rendah agar Windows 11 menjadi lebih ringan dan responsif.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">Tweaks</span>
+                <span class="tag">RAM 4GB</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Modul 3: Startup / Services -->
+          <a href="docs/startup.html" class="card">
+            <div class="card-content">
+              <h3 class="project-title">3. Optimasi Startup & Services</h3>
+              <p class="project-desc">
+                Pangkas default 2.5GB–3GB idle memory, dengan target optimasi menembus ±1.5GB RAM usage.
               </p>
               <div class="tech-tags">
                 <span class="tag">Backup dulu</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
+          <!-- Modul 4: Manual Book & Risiko -->
+          <a href="docs/manual.html" class="card">
             <div class="card-content">
-              <h3 class="project-title">Persiapan</h3>
+              <h3 class="project-title">4. Manual Book & Risiko Fitur</h3>
               <p class="project-desc">
-                Flashdisk 8GB, internet stabil, charger, lisensi valid.
+                Beberapa fitur bawaan akan berkurang demi fokus performa. Sangat disarankan menggunakan Windows edisi Pro/IoT.
               </p>
+              <div class="tech-tags">
+                <span class="tag">Risk Warning</span>
+                <span class="tag">Pro / IoT</span>
+              </div>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
+          <!-- Modul 5: MAS (Microsoft Activation Scripts) -->
+          <a href="docs/mas.html" class="card">
             <div class="card-content">
-              <h3 class="project-title">Risiko</h3>
+              <h3 class="project-title">5. Aktivasi Sistem (MAS)</h3>
               <p class="project-desc">
-                Fitur berkurang, fokus performa, disarankan Pro/IoT.
+                Panduan validasi lisensi sistem operasi pasca instalasi secara aman dan bersih.
               </p>
-            </div>
-          </div>
+              <div class="tech-tags">
+                <span class="tag">Activation</span>
+              </div>
+            </a>
+
+          <!-- Modul 6: Office Setup -->
+          <a href="docs/office.html" class="card">
+            <div class="card-content">
+              <h3 class="project-title">6. Deployment Microsoft Office</h3>
+              <p class="project-desc">
+                Cara instalasi paket aplikasi produktivitas Office yang efisien tanpa membebani background services.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">Office</span>
+              </div>
+          </a>
+
         </div>
       </div>
     </main>

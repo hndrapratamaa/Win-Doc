@@ -1,21 +1,28 @@
-function openSubTab(evt, subTabId) {
-    var container = evt.currentTarget.closest(".card");
-    var subContents = container.querySelectorAll(".sub-tab-content");
-    var subBtns = container.querySelectorAll(".sub-tab-btn");
-
-    subContents.forEach(el => el.style.display = "none");
-    subBtns.forEach(btn => btn.classList.remove("active"));
-
-    document.getElementById(subTabId).style.display = "block";
-    evt.currentTarget.classList.add("active");
-}
-
-function copyCode(btn) {
-    const code = btn.previousElementSibling.innerText;
-
-    navigator.clipboard.writeText(code).then(() => {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-        setTimeout(() => btn.innerHTML = original, 1500);
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const targetUrl = card.getAttribute("data-href");
+      if (targetUrl) {
+        window.location.href = targetUrl;
+      }
     });
-}
+  });
+
+  const prevBtn = document.querySelector(".previous-page-button-container button:first-child");
+  const nextBtn = document.querySelector(".previous-page-button-container button:last-child");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.history.back();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.history.forward();
+    });
+  }
+});

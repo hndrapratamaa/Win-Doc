@@ -1,96 +1,93 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: sans-serif;
   background: #e6e9ef;
 }
 
-.container {
-  max-width: 700px;
+.wrapper {
+  max-width: 600px;
   margin: auto;
   padding: 20px;
 }
 
-/* CARD GLOBAL */
-.card {
-  background: #e6e9ef;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-
-  box-shadow: 
-    8px 8px 16px #c5c8ce,
-    -8px -8px 16px #ffffff;
-}
-
-/* PROFILE */
 .profile {
   text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+  background: #e6e9ef;
+  box-shadow: 6px 6px 12px #c5c8ce, -6px -6px 12px #ffffff;
 }
 
 .avatar {
-  width: 90px;
+  width: 80px;
   border-radius: 50%;
   margin-bottom: 10px;
-
-  box-shadow:
-    4px 4px 10px #c5c8ce,
-    -4px -4px 10px #ffffff;
 }
 
-.subtitle {
-  color: #777;
-  margin-bottom: 10px;
+.profile span {
+  color: gray;
+  font-size: 14px;
 }
 
-/* BUTTON */
-.nav-btn button,
-.back {
+.nav {
+  margin: 10px 0;
+}
+
+.nav button {
+  margin: 0 5px;
+  padding: 6px 12px;
   border: none;
-  padding: 8px 14px;
-  margin: 5px;
   border-radius: 10px;
   background: #e6e9ef;
-
-  box-shadow:
-    4px 4px 8px #c5c8ce,
-    -4px -4px 8px #ffffff;
-
-  cursor: pointer;
+  box-shadow: 3px 3px 6px #c5c8ce, -3px -3px 6px #ffffff;
 }
 
-.nav-btn button:active,
-.back:active {
-  box-shadow: inset 2px 2px 5px #c5c8ce,
-              inset -2px -2px 5px #ffffff;
+.back {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #e6e9ef;
+  box-shadow: 3px 3px 6px #c5c8ce, -3px -3px 6px #ffffff;
 }
 
-/* TEXT */
-h1, h2, h3 {
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.box {
+  padding: 15px;
+  border-radius: 15px;
+
+  background: #e6e9ef;
+  box-shadow: 6px 6px 12px #c5c8ce, -6px -6px #ffffff;
+}
+
+.box h2,
+.box h3 {
   margin: 0 0 10px;
 }
 
-.desc {
-  color: #666;
+.warn {
+  color: orange;
+  font-size: 13px;
 }
 
-.warning {
-  color: #d97706;
-  font-weight: bold;
-}
-
-/* FOOTER */
-.footer {
+footer {
   text-align: center;
   margin-top: 30px;
 }
 
-.footer-img {
-  width: 200px;
-  border-radius: 20px;
+footer img {
+  width: 150px;
+  border-radius: 15px;
   margin: 10px 0;
 }
 
-.footer a {
+footer a {
   font-size: 12px;
-  color: purple;
 }
